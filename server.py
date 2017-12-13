@@ -1,19 +1,24 @@
-from flask import Flask, redirect, render_template
+from flask import Flask, redirect, render_template, request
 
 app = Flask(__name__)
 
-counts = 0
+counts = {
+    'GET': 0,
+    'POST': 0,
+    'DELETE': 0,
+    'PUT': 0,
+}
 
 
 @app.route('/')
 def request_counter():
-    return render_template("index.html", count=counts)
+    return render_template("index.html", count=sum(counts.values()))
 
 
 @app.route('/request-counter')
 def increment():
     global counts
-    counts += 1
+    counts[request.method] += 1
     return redirect('/')
 
 
