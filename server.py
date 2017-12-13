@@ -2,7 +2,7 @@ from flask import Flask, redirect, render_template, request
 import data_handler
 
 app = Flask(__name__)
-filename = "request_counts.txt"
+filename = "/request_counts.txt"
 
 
 @app.route('/')
