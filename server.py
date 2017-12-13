@@ -17,6 +17,11 @@ def increment():
     return redirect('/')
 
 
+@app.route('/statistics')
+def stats():
+    return render_template("statistics.html")
+
+
 if __name__ == '__main__':
     app.run(
         port=5000,
