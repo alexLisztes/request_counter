@@ -10,11 +10,11 @@ def read_file(filename):
     with open(dir_path + filename, 'r') as f:
         for line in f:
             line_list = line.split(': ')
-            res_dict[line_list[key_index]] = line_list[value_index]
+            res_dict[line_list[key_index]] = int(line_list[value_index])
     return res_dict
 
 
 def write_file(filename, data):
     with open(dir_path + filename, 'w') as f:
         for item in data.items():
-            f.write(item[key_index] + ": " + item[value_index])
+            f.write(item[key_index] + ": " + str(item[value_index]) + "\n")
