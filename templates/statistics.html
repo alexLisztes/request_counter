@@ -5,6 +5,20 @@
     <title>Statistics</title>
 </head>
 <body>
-
+    <h1>Statistics</h1>
+    <p>
+        <table>
+            <tr>
+                {% for item in count.items() %}
+                    <th>{{ item[0] }}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for item in count.items() %}
+                    <th>{{ item[1] }}</th>
+                {% endfor %}
+            </tr>
+        </table>
+    </p>
 </body>
 </html>

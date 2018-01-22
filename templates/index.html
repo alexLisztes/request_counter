@@ -14,7 +14,9 @@
         <a href="{{ url_for('increment') }}" methods="['GET']">Get request</a>
     </p>
     <p>
-        <a href="{{ url_for('increment') }}" methods="['POST']">Post request</a>
+        <form method="post" action="{{ url_for('increment') }}">
+            <button type="submit" >Post request</button>
+        </form>
     </p>
     <p>
         <a href="{{ url_for('stats') }}">Statistics</a>

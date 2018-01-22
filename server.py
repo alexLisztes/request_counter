@@ -11,7 +11,7 @@ def request_counter():
     return render_template("index.html", count=sum(counts.values()))
 
 
-@app.route('/request-counter')
+@app.route('/request-counter', methods=['POST', 'GET', 'PUT', 'DELETE'])
 def increment():
     counts = data_handler.read_file(filename)
     counts[request.method] += 1
